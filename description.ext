@@ -1,0 +1,145 @@
+﻿/* ================ Metadaten =============== */
+class header
+{
+   gameType = COOP;
+   minPlayers = 1;
+   maxPlayers = 78;
+};
+
+/* ================ Ladebildschirm =============== */
+onLoadName = "Somersault";
+author = "Drum";
+OnLoadMission = "Now Where Did I Leave My Cup Of Tea";
+/*
+Respawn = "BASE";
+respawnTemplates[]  = {"MenuPosition","Spectator"};
+respawnDelay    = 30;
+respawnOnStart    = 0;
+*/
+DisabledAI = true;
+loadScreen = "images\placeholder.jpg";
+overviewPicture = "";
+enableDebugConsole = 1;
+cba_settings_hasSettingsFile = 1;
+
+respawn = 3;
+respawnOnStart = -1;
+respawnDelay = 10;
+debriefing = 0;
+respawnDialog = 0;
+onPauseScript= "persis\savestate.sqf";
+
+/* ================ Includes =============== */
+
+
+class CfgFunctions
+{
+	#include "functions\CfgFunctions.hpp"
+  #include "furniture\func.hpp"
+};
+
+
+/*================== Prameter ============ */
+
+class Params
+{
+
+  class PlayerPersistence
+	{
+		title = "Player Persistence";
+		texts[] = {"OFF","ON"};
+		values[] = {0, 1};
+		default = 1;
+	};
+
+	class param_loadout
+	{
+		title="Loadout Fraktion";
+		values[] = {0,1,2};
+		texts[] = {"Vanilla Nato","UK Paras Full"};
+		default = 1;
+	};
+
+		class param_hc
+	{
+		title="Headless Client";
+		values[] = {0,1};
+		texts[] = {"Deaktiviert","Aktiviert"};
+		default = 0;
+	};
+
+		class param_zeus
+	{
+		title="Zeus";
+		values[] = {0,1};
+		texts[] = {"Nein","Ja"};
+		default = 1;
+	};
+
+		class param_respawntime
+	{
+		title="Auto Teleport zur Gruppe";
+		values[] = {300,600,1200,1800,3600,5400,7200,28000};
+		texts[] = {"5 min","10 min","20 min","30 min","1 std","1.5 std","2 std","8 std"};
+		default = 600;
+	};
+
+		class param_radiochatter
+	{
+		title="Radio Chatter";
+		values[] = {0,1};
+		texts[] = {"Nein","Ja"};
+		default = 0;
+	};
+		class param_ti
+	{
+		title="Thermalsicht";
+		values[] = {0,1};
+		texts[] = {"Ja","Nein"};
+		default = 0;
+	};
+
+		class param_techcheck
+	{
+		title="Techcheck Modus";
+		values[] = {0,1,2};
+		texts[] = {"Test Modus","Missions Modus","Deaktiviert"};
+		default = 2;
+	};
+
+};
+
+
+
+class CfgDebriefing
+{
+	class End2
+	{
+		title = "Mission Erfolgreich";
+		subtitle = "";
+		description = "Toll Leistung ..";
+		pictureBackground = "images\placeholder.jpg";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End5
+	{
+		title = "Techcheck Erfolgreich";
+		subtitle = "";
+		description = "Dein Techcheck war Erfolgreich! Bitte sei pünktlich zur Mission wieder da!";
+		pictureBackground = "images\placeholder.jpg";
+		picture = "b_service";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+
+	class End6
+	{
+		title = "Kein Techcheck";
+		subtitle = "Keine Mission";
+		description = "Leider hast du kein Techcheck gemacht. Darum kannst du in dieser Mission nicht mitmachen";
+		pictureBackground = "images\placeholder.jpg";
+		picture = "KIA";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};

@@ -1,0 +1,16 @@
+//_unit = this select 0;
+sleep 1;
+hint format["Oh, %1, You here? Again?",name player];
+Sleep 6;
+hint "Polishing his glasses";
+Sleep 6;
+hint "Looking through a very big book while making ""Hmm, interesting"" remarks";
+Sleep 6;
+hint "Feigning interest";
+Sleep 6;
+hint "Looking out of the window and thinking of his girfriend";
+Sleep 6;
+hint "Finding his largest syringe";
+Sleep 6;
+player setDammage 0;
+hint format["There you go %1. Feeling better now?",name player];
